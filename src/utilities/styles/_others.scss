@@ -1,0 +1,164 @@
+@import "../references.scss";
+.pointer {
+  cursor: pointer;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flip-x {
+  transform: scaleX(-1);
+}
+
+.flip-y {
+  transform: scaleY(-1);
+}
+
+.rotate-90 {
+  transform: rotate(90);
+}
+
+.rotate-180 {
+  transform: rotate(90);
+}
+
+.rotate-270 {
+  transform: rotate(90);
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.w-100-i {
+  width: 100% !important;
+}
+
+.w-fit {
+  width: fit-content;
+}
+
+.center-content-x {
+  display: flex;
+  justify-content: center;
+}
+
+.center-content-y {
+  display: flex;
+  align-items: center;
+}
+
+.center-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.align-items-center {
+  display: flex;
+  align-items: center;
+}
+
+.justify-content-center {
+  display: flex;
+  justify-content: center;
+}
+
+.justify-content-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-pre-md-column {
+  display: flex;
+  @include app-pre-bp(md) {
+    flex-direction: column;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.m-auto {
+  margin: auto;
+}
+
+.mh-auto {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.min-h-100-vh {
+  min-height: 100vh;
+}
+
+.z-index-0 {
+  z-index: -1 !important;
+}
+
+.main-content {
+  max-width: $contentMaxWidth;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $sideMargin;
+  padding-right: $sideMargin;
+}
+
+* {
+  transition: background-color 0.3s;
+  transition: color 0.3s;
+  box-sizing: border-box;
+
+  .skeleton {
+    background-color: gray;
+    display: block;
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      transform: translateX(-100%);
+      background-image: linear-gradient(
+        90deg,
+        rgba(gray, 0) 0,
+
+        rgba(gray, 0.3) 50%,
+        rgba(gray, 0)
+      );
+      animation: skeleton-background-animation 2s infinite;
+      content: "";
+    }
+
+    @keyframes skeleton-background-animation {
+      100% {
+        transform: translateX(100%);
+      }
+    }
+  }
+}

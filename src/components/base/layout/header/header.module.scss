@@ -1,0 +1,45 @@
+@import "utilities/references.scss";
+
+.header {
+  z-index: 100;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  backdrop-filter: blur(16px);
+  transition: 0.3s ease-in-out;
+  box-shadow: 0px 4px 32px 0px #00000000;
+  @include app-bp-md(height, nth($headerHeight, 1), nth($headerHeight, 2));
+
+  &.collapsed {
+    box-shadow: 0px 4px 32px 0px #0000000d;
+    background-color: rgba($color: white, $alpha: 0.5) !important;
+  }
+
+  .no-bg {
+    background: transparent;
+  }
+
+  .link {
+    &:hover {
+      color: $black;
+    }
+  }
+}
+
+.header-menu-drawer {
+  [class*="ant-drawer-header"] {
+    border-bottom-color: transparent !important;
+  }
+
+  [class*="ant-drawer-body"] {
+    .drawer-link-box {
+      border-radius: 10px;
+      padding: 10px 12px;
+
+      &:hover {
+        background-color: rgba($color: $primary, $alpha: 0.75);
+        color: white;
+      }
+    }
+  }
+}

@@ -1,0 +1,225 @@
+@import "utilities/references.scss";
+
+.alarmsContainer {
+  padding: 20px;
+  background-color: #f8f9fa; // Consistent page background
+}
+
+.pageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+
+  .titleSubtitle {
+    .title {
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .subtitle {
+      font-size: 16px;
+      color: #6c757d;
+    }
+  }
+}
+
+.addAlarmButton {
+  background-color: #05d37e;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  &:hover {
+    background-color: #05d37e !important;
+    color: white !important;
+    opacity: 0.8 !important;
+  }
+}
+
+.alarmListContainer {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+  .listHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e9ecef;
+
+    .listTitle {
+      font-size: 18px;
+      font-weight: 600;
+    }
+  }
+
+  .alarmTable {
+    .ant-table-thead > tr > th {
+      background-color: white !important;
+      font-weight: 500;
+      color: #6c757d;
+      font-size: 14px;
+      border-bottom: 1px solid #e9ecef;
+      padding: 12px 16px;
+
+      .sorter {
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .ant-checkbox-wrapper {
+        .ant-checkbox-indeterminate,
+        .ant-checkbox-checked {
+          .ant-checkbox-inner {
+            background-color: #1ed087;
+            border-color: #1ed087;
+          }
+        }
+        .ant-checkbox-inner {
+          border-color: #adb5bd;
+        }
+        &:hover .ant-checkbox-inner {
+          border-color: #1ed087;
+        }
+      }
+    }
+
+    .ant-table-tbody > tr > td {
+      border-bottom: 1px solid #e9ecef;
+      padding: 12px 16px;
+      font-size: 14px;
+      color: #212529;
+      vertical-align: middle;
+    }
+
+    .ant-table-tbody > tr:last-child > td {
+      border-bottom: none;
+    }
+
+    .lastUpdateColumn {
+      color: #6c757d;
+    }
+
+    .actionsColumn {
+    }
+    .statusColumn {
+    }
+    .descriptionColumn {
+    }
+
+    .ant-checkbox-wrapper {
+      .ant-checkbox-checked {
+        .ant-checkbox-inner {
+          background-color: #1ed087;
+          border-color: #1ed087;
+          &::after {
+          }
+        }
+      }
+      .ant-checkbox-inner {
+        border-color: #adb5bd;
+      }
+      &:hover .ant-checkbox-inner {
+        border-color: #1ed087;
+      }
+    }
+
+    .ant-switch-checked {
+      background-color: #1ed087 !important;
+    }
+  }
+
+  .actions {
+    display: flex;
+    gap: 16px;
+    color: #6c757d;
+    font-size: 16px;
+
+    span {
+      cursor: pointer;
+      &:hover {
+        color: darken(#6c757d, 15%);
+      }
+    }
+    .anticon {
+      vertical-align: middle;
+    }
+  }
+}
+
+.paginationContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #e9ecef;
+  font-size: 14px;
+  color: #6c757d;
+
+  .pageInfo {
+    // styles if needed
+  }
+
+  .buttons {
+    display: flex;
+    gap: 8px;
+  }
+}
+
+// Custom styling for AntD components within this page
+.alarmListContainer {
+  .ant-list-item {
+    padding: 0;
+    border: none;
+  }
+  .ant-checkbox-wrapper {
+    // Styles for checkbox if needed
+  }
+  .ant-switch {
+    // Styles for switch if needed
+  }
+  .ant-pagination {
+    // Styles for pagination if needed
+  }
+  .ant-btn {
+    // Styles for buttons if needed
+  }
+}
+
+// Styles for AddAlarmModal
+.addAlarmFormRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px; // Space before the line
+
+  .label {
+    font-size: 16px;
+    color: #212529; // Darker text
+    white-space: nowrap;
+  }
+
+  .ant-select {
+    min-width: 120px; // Give selects a minimum width
+  }
+
+  .ant-input-number,
+  .ant-input-wrapper {
+    min-width: 100px; // Give value input a minimum width
+  }
+}
+
+.modalFooter {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 24px; // Space after the line
+  padding-top: 20px;
+  border-top: 1px solid #e9ecef;
+}

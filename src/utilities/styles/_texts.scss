@@ -1,0 +1,145 @@
+@import "./display";
+@import "../references.scss";
+
+html {
+  font-size: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  font-size: 22px;
+  color: $black;
+}
+
+a {
+  font-weight: 400;
+  font-size: 16px;
+}
+
+p {
+  font-weight: 400;
+  color: $gray1;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+//------ font size ------//
+
+$typo-p-sizes: (
+  16px: 1rem,
+  14px: 0.875rem,
+  12px: 0.75rem,
+);
+
+$typo-h-sizes: (
+  40px: 2.5rem,
+  32px: 2rem,
+  24px: 1.5rem,
+  22px: 1.375rem,
+  20px: 1.25rem,
+  16px: 1rem,
+);
+
+@each $px, $rem in $typo-p-sizes {
+  $i: index($typo-p-sizes, $px $rem);
+  .t-p#{$i} {
+    font-size: $px;
+    font-size: $rem;
+  }
+  .t-p#{$i}-i {
+    font-size: $px !important;
+    font-size: $rem !important;
+  }
+}
+
+// pre-md H tag sizes
+@each $px, $rem in $typo-h-sizes {
+  $i: index($typo-h-sizes, $px $rem);
+  .t-h#{$i} {
+    font-size: $px;
+    font-size: $rem;
+  }
+  .t-h#{$i}-i {
+    font-size: $px !important;
+    font-size: $rem !important;
+  }
+}
+
+// md H tag sizes
+@each $px, $rem in $typo-h-sizes {
+  $i: index($typo-h-sizes, $px $rem);
+  .t-md-h#{$i} {
+    @include app-bp(md) {
+      font-size: $px;
+      font-size: $rem;
+    }
+  }
+  .t-md-h#{$i}-i {
+    @include app-bp(md) {
+      font-size: $px !important;
+      font-size: $rem !important;
+    }
+  }
+}
+
+//------ line height ------//
+
+$typo-line-heights: (54.4px, 42.74px, 37.99px, 28.21px, 26px, 24px, auto);
+
+@each $l in $typo-line-heights {
+  $i: index($typo-line-heights, $l);
+  .t-l#{$i} {
+    line-height: $l;
+  }
+  .t-l#{$i}-i {
+    line-height: $l !important;
+  }
+}
+
+//------ font weight ------//
+
+$typo-weights: (900, 800, 700, 600, 500, 400, 300);
+
+@each $w in $typo-weights {
+  .t-#{$w} {
+    font-weight: $w;
+  }
+  .t-#{$w}-i {
+    font-weight: $w !important;
+  }
+}
+
+//------ color ------//
+
+$typo-colors: (
+  white: white,
+  primary: $primary,
+  green: $green,
+  black: $black,
+  black2: $black2,
+  gray1: $gray1,
+  gray2: $gray2,
+);
+
+@each $key, $value in $typo-colors {
+  .t-#{$key} {
+    color: $value;
+  }
+  .t-#{$key}-i {
+    color: $value !important;
+  }
+}
+
+@each $key, $value in $typo-colors {
+  .bg-#{$key} {
+    background-color: $value;
+  }
+  .bg-#{$key}-i {
+    background-color: $value !important;
+  }
+}

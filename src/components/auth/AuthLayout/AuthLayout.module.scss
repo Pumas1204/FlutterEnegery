@@ -1,0 +1,64 @@
+.authLayout {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  * {
+    direction: ltr;
+    text-align: left;
+  }
+  .imageSection {
+    position: relative;
+    width: 50%; // Adjust width as needed
+    display: none; // Hidden on small screens by default
+
+    @media (min-width: 768px) {
+      // Show on medium screens and up
+      display: block;
+    }
+  }
+
+  .formSection {
+    width: 100%; // Full width on small screens
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: #fff; // Or your desired background
+
+    @media (min-width: 768px) {
+      // Half width on medium screens and up
+      width: 50%;
+    }
+
+    // Add style for when the image is hidden
+    &.fullWidth {
+      width: 100%; // Take full width when image is hidden
+
+      @media (min-width: 768px) {
+        width: 100%; // Ensure full width even on larger screens
+      }
+
+      // Center the form container within the full width
+      justify-content: center;
+    }
+
+    .formContainer {
+      max-width: 400px;
+      width: 100%;
+
+      h1 {
+        font-size: 1.75rem; // Adjust as needed
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: #333;
+        text-align: center;
+      }
+
+      p {
+        margin-bottom: 2rem;
+        color: #666;
+        text-align: center;
+      }
+    }
+  }
+}

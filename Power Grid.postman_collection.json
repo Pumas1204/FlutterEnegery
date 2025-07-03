@@ -1,0 +1,2356 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Power Grid",
+    "version": "1.0.0",
+    "description": ""
+  },
+  "servers": [
+    {
+      "url": "{{base_url}}"
+    },
+    {
+      "url": "api-power.6thsolution.com"
+    }
+  ],
+  "paths": {
+    "/api/v1/usr/auth/login/": {
+      "parameters": [],
+      "post": {
+        "summary": "Login",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "headers": {
+              "Server": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "nginx/1.24.0 (Ubuntu)"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Thu, 17 Apr 2025 21:27:04 GMT"
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "application/json"
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer"
+                },
+                "example": "630"
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "keep-alive"
+              },
+              "Vary": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Accept, Cookie"
+              },
+              "Allow": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "POST, OPTIONS"
+              },
+              "X-Frame-Options": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "DENY"
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "nosniff"
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "same-origin"
+              },
+              "Cross-Origin-Opener-Policy": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "same-origin"
+              }
+            },
+            "description": "New Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "tokens": {
+                      "type": "object",
+                      "properties": {
+                        "refresh": {
+                          "type": "string"
+                        },
+                        "access": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "user": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "integer"
+                        },
+                        "first_name": {
+                          "type": "string"
+                        },
+                        "last_name": {
+                          "type": "string"
+                        },
+                        "email": {
+                          "type": "string",
+                          "format": "email"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/usr/auth/register/": {
+      "parameters": [],
+      "post": {
+        "summary": "Register",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "headers": {
+              "Server": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "nginx/1.24.0 (Ubuntu)"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Thu, 17 Apr 2025 21:32:54 GMT"
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "application/json"
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer"
+                },
+                "example": "630"
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "keep-alive"
+              },
+              "Vary": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Accept, Cookie"
+              },
+              "Allow": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "POST, OPTIONS"
+              },
+              "X-Frame-Options": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "DENY"
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "nosniff"
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "same-origin"
+              },
+              "Cross-Origin-Opener-Policy": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "same-origin"
+              }
+            },
+            "description": "New Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "tokens": {
+                      "type": "object",
+                      "properties": {
+                        "refresh": {
+                          "type": "string"
+                        },
+                        "access": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "user": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "integer"
+                        },
+                        "first_name": {
+                          "type": "string"
+                        },
+                        "last_name": {
+                          "type": "string"
+                        },
+                        "email": {
+                          "type": "string",
+                          "format": "email"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/usr/profile/": {
+      "parameters": [],
+      "get": {
+        "summary": "Profile",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "headers": {
+              "Server": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "nginx/1.24.0 (Ubuntu)"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Fri, 18 Apr 2025 20:22:10 GMT"
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "application/json"
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer"
+                },
+                "example": "101"
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "keep-alive"
+              },
+              "Vary": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Accept"
+              },
+              "Allow": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "GET, HEAD, OPTIONS"
+              },
+              "X-Frame-Options": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "DENY"
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "nosniff"
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "same-origin"
+              },
+              "Cross-Origin-Opener-Policy": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "same-origin"
+              }
+            },
+            "description": "New Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "user": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "integer"
+                        },
+                        "first_name": {
+                          "type": "string"
+                        },
+                        "last_name": {
+                          "type": "string"
+                        },
+                        "email": {
+                          "type": "string",
+                          "format": "email"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/alm/alarms/": {
+      "parameters": [],
+      "get": {
+        "summary": "List All Alarms",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "example": "Bearer {{access_token}}",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "headers": {
+              "Server": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "nginx/1.24.0 (Ubuntu)"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Thu, 17 Apr 2025 22:06:33 GMT"
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "application/json"
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer"
+                },
+                "example": "375"
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "keep-alive"
+              },
+              "Vary": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Accept"
+              },
+              "Allow": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "GET, POST, HEAD, OPTIONS"
+              },
+              "X-Frame-Options": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "DENY"
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "nosniff"
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "same-origin"
+              },
+              "Cross-Origin-Opener-Policy": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "same-origin"
+              }
+            },
+            "description": "List All Alarms",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    },
+                    "total_pages": {
+                      "type": "integer"
+                    },
+                    "current_page": {
+                      "type": "integer"
+                    },
+                    "next": {
+                      "nullable": true
+                    },
+                    "previous": {
+                      "nullable": true
+                    },
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "integer"
+                          },
+                          "updated_at": {
+                            "type": "string",
+                            "format": "date-time"
+                          },
+                          "created_at": {
+                            "type": "string",
+                            "format": "date-time"
+                          },
+                          "deleted_at": {
+                            "nullable": true
+                          },
+                          "description": {
+                            "type": "string"
+                          },
+                          "status": {
+                            "type": "string"
+                          },
+                          "alarm_field": {
+                            "type": "string"
+                          },
+                          "alarm_value": {
+                            "type": "string",
+                            "format": "utc-millisec"
+                          },
+                          "alarm_condition": {
+                            "type": "string"
+                          },
+                          "profile": {
+                            "type": "integer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create Alarm",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": false,
+            "example": "application/json",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "example": "Bearer {{access_token}}",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "headers": {
+              "Server": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "nginx/1.24.0 (Ubuntu)"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Thu, 17 Apr 2025 22:05:24 GMT"
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "application/json"
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer"
+                },
+                "example": "289"
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "keep-alive"
+              },
+              "Vary": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Accept"
+              },
+              "Allow": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "GET, POST, HEAD, OPTIONS"
+              },
+              "X-Frame-Options": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "DENY"
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "nosniff"
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "same-origin"
+              },
+              "Cross-Origin-Opener-Policy": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "same-origin"
+              }
+            },
+            "description": "Create Alarm",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "deleted_at": {
+                      "nullable": true
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "type": "string"
+                    },
+                    "alarm_field": {
+                      "type": "string"
+                    },
+                    "alarm_value": {
+                      "type": "string",
+                      "format": "utc-millisec"
+                    },
+                    "alarm_condition": {
+                      "type": "string"
+                    },
+                    "profile": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/alm/alarms/{{alarm_id}}/": {
+      "parameters": [],
+      "get": {
+        "summary": "Get Single Alarm",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "example": "Bearer {{access_token}}",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "headers": {
+              "Server": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "nginx/1.24.0 (Ubuntu)"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Thu, 17 Apr 2025 22:06:09 GMT"
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "application/json"
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer"
+                },
+                "example": "289"
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "keep-alive"
+              },
+              "Vary": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Accept"
+              },
+              "Allow": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+              },
+              "X-Frame-Options": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "DENY"
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "nosniff"
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "same-origin"
+              },
+              "Cross-Origin-Opener-Policy": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "same-origin"
+              }
+            },
+            "description": "Get Single Alarm",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "deleted_at": {
+                      "nullable": true
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "type": "string"
+                    },
+                    "alarm_field": {
+                      "type": "string"
+                    },
+                    "alarm_value": {
+                      "type": "string",
+                      "format": "utc-millisec"
+                    },
+                    "alarm_condition": {
+                      "type": "string"
+                    },
+                    "profile": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Update Alarm",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": false,
+            "example": "application/json",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "example": "Bearer {{access_token}}",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {}
+      },
+      "patch": {
+        "summary": "Partial Update Alarm",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": false,
+            "example": "application/json",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "example": "Bearer {{access_token}}",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "headers": {
+              "Server": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "nginx/1.24.0 (Ubuntu)"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Thu, 17 Apr 2025 22:06:24 GMT"
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "application/json"
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer"
+                },
+                "example": "290"
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "keep-alive"
+              },
+              "Vary": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Accept"
+              },
+              "Allow": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+              },
+              "X-Frame-Options": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "DENY"
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "nosniff"
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "same-origin"
+              },
+              "Cross-Origin-Opener-Policy": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "same-origin"
+              }
+            },
+            "description": "Partial Update Alarm",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "updated_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "deleted_at": {
+                      "nullable": true
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "type": "string"
+                    },
+                    "alarm_field": {
+                      "type": "string"
+                    },
+                    "alarm_value": {
+                      "type": "string",
+                      "format": "utc-millisec"
+                    },
+                    "alarm_condition": {
+                      "type": "string"
+                    },
+                    "profile": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete Alarm",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "example": "Bearer {{access_token}}",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/api/v1/grid/supply-demand/": {
+      "parameters": [],
+      "get": {
+        "summary": "Supply Demand (Today)",
+        "parameters": [
+          {
+            "name": "time_filter",
+            "in": "query",
+            "required": false,
+            "example": "today",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "example": "Bearer {{access_token}}",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "headers": {
+              "Server": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "nginx/1.24.0 (Ubuntu)"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Thu, 17 Apr 2025 22:14:15 GMT"
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "application/json"
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer"
+                },
+                "example": "1188"
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "keep-alive"
+              },
+              "Vary": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Accept"
+              },
+              "Allow": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "GET, HEAD, OPTIONS"
+              },
+              "X-Frame-Options": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "DENY"
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "nosniff"
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "same-origin"
+              },
+              "Cross-Origin-Opener-Policy": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "same-origin"
+              }
+            },
+            "description": "Supply Demand (Today)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    },
+                    "total_pages": {
+                      "type": "integer"
+                    },
+                    "current_page": {
+                      "type": "integer"
+                    },
+                    "next": {
+                      "type": "string",
+                      "format": "uri"
+                    },
+                    "previous": {
+                      "nullable": true
+                    },
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "integer"
+                          },
+                          "timestamp": {
+                            "type": "string",
+                            "format": "date-time"
+                          },
+                          "demand": {
+                            "nullable": true
+                          },
+                          "supply": {
+                            "nullable": true
+                          },
+                          "price": {
+                            "type": "number"
+                          },
+                          "source": {
+                            "nullable": true
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/grid/supply/": {
+      "parameters": [],
+      "get": {
+        "summary": "Supply (Today)",
+        "parameters": [
+          {
+            "name": "time_filter",
+            "in": "query",
+            "required": false,
+            "example": "today",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "example": "Bearer {{access_token}}",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "headers": {
+              "Server": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "nginx/1.24.0 (Ubuntu)"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Thu, 17 Apr 2025 22:14:59 GMT"
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "application/json"
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer"
+                },
+                "example": "944"
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "keep-alive"
+              },
+              "Vary": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Accept"
+              },
+              "Allow": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "GET, HEAD, OPTIONS"
+              },
+              "X-Frame-Options": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "DENY"
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "nosniff"
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "same-origin"
+              },
+              "Cross-Origin-Opener-Policy": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "same-origin"
+              }
+            },
+            "description": "Supply (Today)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    },
+                    "total_pages": {
+                      "type": "integer"
+                    },
+                    "current_page": {
+                      "type": "integer"
+                    },
+                    "next": {
+                      "type": "string",
+                      "format": "uri"
+                    },
+                    "previous": {
+                      "nullable": true
+                    },
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "integer"
+                          },
+                          "timestamp": {
+                            "type": "string",
+                            "format": "date-time"
+                          },
+                          "supply": {
+                            "type": "integer"
+                          },
+                          "series": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/grid/demand/": {
+      "parameters": [],
+      "get": {
+        "summary": "Demand (Today)",
+        "parameters": [
+          {
+            "name": "time_filter",
+            "in": "query",
+            "required": false,
+            "example": "today",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "example": "Bearer {{access_token}}",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "headers": {
+              "Server": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "nginx/1.24.0 (Ubuntu)"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Thu, 17 Apr 2025 22:16:38 GMT"
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "application/json"
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer"
+                },
+                "example": "1002"
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "keep-alive"
+              },
+              "Vary": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Accept"
+              },
+              "Allow": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "GET, HEAD, OPTIONS"
+              },
+              "X-Frame-Options": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "DENY"
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "nosniff"
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "same-origin"
+              },
+              "Cross-Origin-Opener-Policy": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "same-origin"
+              }
+            },
+            "description": "Demand (Today)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    },
+                    "total_pages": {
+                      "type": "integer"
+                    },
+                    "current_page": {
+                      "type": "integer"
+                    },
+                    "next": {
+                      "type": "string",
+                      "format": "uri"
+                    },
+                    "previous": {
+                      "nullable": true
+                    },
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "integer"
+                          },
+                          "timestamp": {
+                            "type": "string",
+                            "format": "date-time"
+                          },
+                          "demand": {
+                            "type": "number"
+                          },
+                          "series": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/grid/demand/demand_summary/": {
+      "parameters": [],
+      "get": {
+        "summary": "Get Demand Summary",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "example": "Bearer {{access_token}}",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "headers": {
+              "Server": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "nginx/1.24.0 (Ubuntu)"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Fri, 18 Apr 2025 19:06:44 GMT"
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "application/json"
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer"
+                },
+                "example": "268"
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "keep-alive"
+              },
+              "Vary": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Accept"
+              },
+              "Allow": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "GET, HEAD, OPTIONS"
+              },
+              "X-Frame-Options": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "DENY"
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "nosniff"
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "same-origin"
+              },
+              "Cross-Origin-Opener-Policy": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "same-origin"
+              }
+            },
+            "description": "Get Demand Summary",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "market_demand": {
+                      "type": "object",
+                      "properties": {
+                        "value": {
+                          "type": "string"
+                        },
+                        "time": {
+                          "type": "string",
+                          "format": "style"
+                        }
+                      }
+                    },
+                    "five_minute_demand": {
+                      "type": "object",
+                      "properties": {
+                        "value": {
+                          "type": "string"
+                        },
+                        "time": {
+                          "type": "string",
+                          "format": "style"
+                        }
+                      }
+                    },
+                    "projected_peak": {
+                      "type": "object",
+                      "properties": {
+                        "value": {
+                          "type": "string"
+                        },
+                        "time": {
+                          "type": "string",
+                          "format": "style"
+                        }
+                      }
+                    },
+                    "projected_minimum": {
+                      "type": "object",
+                      "properties": {
+                        "value": {
+                          "type": "string"
+                        },
+                        "time": {
+                          "type": "string",
+                          "format": "style"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/grid/supply/generator_availability/": {
+      "parameters": [],
+      "get": {
+        "summary": "Generator Availability (Today)",
+        "parameters": [
+          {
+            "name": "time_filter",
+            "in": "query",
+            "required": false,
+            "example": "today",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "example": "Bearer {{access_token}}",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "headers": {
+              "Server": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "nginx/1.24.0 (Ubuntu)"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Fri, 18 Apr 2025 20:04:29 GMT"
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "application/json"
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer"
+                },
+                "example": "2700"
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "keep-alive"
+              },
+              "Vary": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Accept"
+              },
+              "Allow": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "GET, HEAD, OPTIONS"
+              },
+              "X-Frame-Options": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "DENY"
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "nosniff"
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "same-origin"
+              },
+              "Cross-Origin-Opener-Policy": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "same-origin"
+              }
+            },
+            "description": "Generator Availability (Today)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    },
+                    "total_pages": {
+                      "type": "integer"
+                    },
+                    "current_page": {
+                      "type": "integer"
+                    },
+                    "next": {
+                      "type": "string",
+                      "format": "uri"
+                    },
+                    "previous": {
+                      "nullable": true
+                    },
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "integer"
+                          },
+                          "timestamp": {
+                            "type": "string",
+                            "format": "date-time"
+                          },
+                          "biofuel": {
+                            "type": "string"
+                          },
+                          "gas": {
+                            "type": "string"
+                          },
+                          "hydro": {
+                            "type": "string"
+                          },
+                          "nuclear": {
+                            "type": "string"
+                          },
+                          "other": {
+                            "type": "string"
+                          },
+                          "solar": {
+                            "type": "string"
+                          },
+                          "wind": {
+                            "type": "string"
+                          },
+                          "total": {
+                            "type": "string"
+                          },
+                          "hourly_imports": {
+                            "type": "string"
+                          },
+                          "hourly_exports": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/grid/power-data/": {
+      "parameters": [],
+      "get": {
+        "summary": "Power Data (Today)",
+        "parameters": [
+          {
+            "name": "time_filter",
+            "in": "query",
+            "required": false,
+            "example": "today",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "example": "Bearer {{access_token}}",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "headers": {
+              "Server": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "nginx/1.24.0 (Ubuntu)"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Fri, 18 Apr 2025 19:47:11 GMT"
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "application/json"
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer"
+                },
+                "example": "1396"
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "keep-alive"
+              },
+              "Vary": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Accept"
+              },
+              "Allow": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "GET, HEAD, OPTIONS"
+              },
+              "X-Frame-Options": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "DENY"
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "nosniff"
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "same-origin"
+              },
+              "Cross-Origin-Opener-Policy": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "same-origin"
+              }
+            },
+            "description": "Power Data (Today)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    },
+                    "total_pages": {
+                      "type": "integer"
+                    },
+                    "current_page": {
+                      "type": "integer"
+                    },
+                    "next": {
+                      "type": "string",
+                      "format": "uri"
+                    },
+                    "previous": {
+                      "nullable": true
+                    },
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "timestamp": {
+                            "type": "string",
+                            "format": "date-time"
+                          },
+                          "demand": {
+                            "type": "string"
+                          },
+                          "supply": {
+                            "type": "string"
+                          },
+                          "price": {
+                            "type": "string"
+                          },
+                          "source": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/grid/price/chart_data/": {
+      "parameters": [],
+      "get": {
+        "summary": "Get Price Chart Data",
+        "parameters": [
+          {
+            "name": "time_filter",
+            "in": "query",
+            "required": false,
+            "description": "Filter data by time (last_24_hours, today, yesterday, week, month)",
+            "example": "yesterday",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "example": "Token {{token}}",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "headers": {
+              "Server": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "nginx/1.24.0 (Ubuntu)"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Fri, 18 Apr 2025 21:06:47 GMT"
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "application/json"
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer"
+                },
+                "example": "290"
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "keep-alive"
+              },
+              "Vary": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Accept"
+              },
+              "Allow": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "GET, HEAD, OPTIONS"
+              },
+              "X-Frame-Options": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "DENY"
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "nosniff"
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "same-origin"
+              },
+              "Cross-Origin-Opener-Policy": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "same-origin"
+              }
+            },
+            "description": "Get Price Chart Data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    },
+                    "total_pages": {
+                      "type": "integer"
+                    },
+                    "current_page": {
+                      "type": "integer"
+                    },
+                    "next": {
+                      "nullable": true
+                    },
+                    "previous": {
+                      "nullable": true
+                    },
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "timestamp": {
+                            "type": "string",
+                            "format": "date-time"
+                          },
+                          "price": {
+                            "type": "string"
+                          },
+                          "prediction": {
+                            "type": "string"
+                          },
+                          "source": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/grid/price/": {
+      "parameters": [],
+      "get": {
+        "summary": "List Prices",
+        "parameters": [
+          {
+            "name": "time_filter",
+            "in": "query",
+            "required": false,
+            "description": "Filter options: today, yesterday, week, month",
+            "example": "today",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "series",
+            "in": "query",
+            "required": false,
+            "description": "Filter by series (hoep, mcp, global_adjustment, uplift)",
+            "example": "hoep",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "example": "Token {{token}}",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "headers": {
+              "Server": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "nginx/1.24.0 (Ubuntu)"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Fri, 18 Apr 2025 20:50:01 GMT"
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "application/json"
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer"
+                },
+                "example": "920"
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "keep-alive"
+              },
+              "Vary": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Accept"
+              },
+              "Allow": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "GET, HEAD, OPTIONS"
+              },
+              "X-Frame-Options": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "DENY"
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "nosniff"
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "same-origin"
+              },
+              "Cross-Origin-Opener-Policy": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "same-origin"
+              }
+            },
+            "description": "List Prices",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    },
+                    "total_pages": {
+                      "type": "integer"
+                    },
+                    "current_page": {
+                      "type": "integer"
+                    },
+                    "next": {
+                      "type": "string",
+                      "format": "uri"
+                    },
+                    "previous": {
+                      "nullable": true
+                    },
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "integer"
+                          },
+                          "timestamp": {
+                            "type": "string",
+                            "format": "date-time"
+                          },
+                          "price": {
+                            "type": "number"
+                          },
+                          "series": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/grid/price/price_summary/": {
+      "parameters": [],
+      "get": {
+        "summary": "Get Price Summary",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "example": "Token {{token}}",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "headers": {
+              "Server": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "nginx/1.24.0 (Ubuntu)"
+              },
+              "Date": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Fri, 18 Apr 2025 20:43:26 GMT"
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "application/json"
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer"
+                },
+                "example": "496"
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "keep-alive"
+              },
+              "Vary": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Accept"
+              },
+              "Allow": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "GET, HEAD, OPTIONS"
+              },
+              "X-Frame-Options": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "DENY"
+              },
+              "X-Content-Type-Options": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "nosniff"
+              },
+              "Referrer-Policy": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "same-origin"
+              },
+              "Cross-Origin-Opener-Policy": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "same-origin"
+              }
+            },
+            "description": "Get Price Summary",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "ontario_price": {
+                      "type": "object",
+                      "properties": {
+                        "title": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        },
+                        "time": {
+                          "type": "string",
+                          "format": "style"
+                        }
+                      }
+                    },
+                    "five_minute_price": {
+                      "type": "object",
+                      "properties": {
+                        "title": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        },
+                        "time": {
+                          "type": "string",
+                          "format": "style"
+                        }
+                      }
+                    },
+                    "global_adjustment": {
+                      "type": "object",
+                      "properties": {
+                        "title": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        },
+                        "period": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "average_weighted_price": {
+                      "type": "object",
+                      "properties": {
+                        "title": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        },
+                        "period": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "hourly_uplift": {
+                      "type": "object",
+                      "properties": {
+                        "title": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        },
+                        "time": {
+                          "type": "string",
+                          "format": "style"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

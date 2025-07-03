@@ -1,0 +1,17 @@
+.authButton {
+  // Override Ant Design's primary button color to match the design
+  // Ensure this color value matches the green in the images
+  background-color: #28a745 !important; // Example green - adjust to match image exactly
+  border-color: #28a745 !important; // Match border color
+  height: 48px; // Adjust height if needed
+  font-size: 1rem; // Adjust font size if needed
+  font-weight: 600;
+
+  &:hover,
+  &:focus {
+    background-color: #218838 !important; // Slightly darker green for hover/focus
+    border-color: #1e7e34 !important;
+  }
+
+  // Add any other specific button styles here
+}

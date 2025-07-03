@@ -1,0 +1,9 @@
+@import "./references/breakpoints";
+@import "./references/colors";
+
+$contentMaxWidth: 1240px;
+$sideMargin: 20px;
+$verticalMargin: (40px, 24px); // (desktop, mobile)
+$headerHeight: (97px, 68px); // (desktop, mobile)
+$bottomNavigation: 76px;
+$footerHeight: 453px;

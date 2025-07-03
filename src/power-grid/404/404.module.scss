@@ -1,0 +1,12 @@
+@import "utilities/references.scss";
+
+.error-404 {
+  max-width: 1168px;
+  background-color: transparent;
+  box-sizing: border-box;
+
+  .image {
+    width: 100%;
+    max-width: 400px;
+  }
+}

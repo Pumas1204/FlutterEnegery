@@ -1,0 +1,12 @@
+@import "utilities/references.scss";
+
+.container {
+  overflow-x: clip;
+  min-height: 100vh;
+
+  > div {
+    flex: 1;
+    padding-top: nth($verticalMargin, 1);
+    padding-bottom: nth($verticalMargin, 2);
+  }
+}

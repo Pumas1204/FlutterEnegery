@@ -1,0 +1,66 @@
+@import "../references/_breakpoints";
+
+$displays: block, flex, none;
+
+.d-none {
+  display: none;
+}
+.d-none-i {
+  display: none !important;
+}
+.d-flex {
+  display: flex;
+}
+.d-flex-i {
+  display: flex !important;
+}
+.d-block {
+  display: block;
+}
+.d-block-i {
+  display: block !important;
+}
+
+@each $bp, $width in $appBreakPoints {
+  @each $display in $displays {
+    .d-#{$bp}-#{$display} {
+      @include app-bp($bp) {
+        display: $display;
+      }
+    }
+    .d-pre-#{$bp}-#{$display} {
+      @include app-pre-bp($bp) {
+        display: $display;
+      }
+    }
+    .d-#{$bp}-#{$display}-i {
+      @include app-bp($bp) {
+        display: $display !important;
+      }
+    }
+    .d-pre-#{$bp}-#{$display}-i {
+      @include app-pre-bp($bp) {
+        display: $display !important;
+      }
+    }
+  }
+}
+
+.gap-4 {
+  gap: 0.25rem;
+}
+.gap-8 {
+  gap: 0.5rem;
+}
+.gap-12 {
+  gap: 0.75rem;
+}
+.gap-16 {
+  gap: 1rem;
+}
+.gap-24 {
+  gap: 1.5rem;
+}
+.gap-32 {
+  gap: 2rem;
+}

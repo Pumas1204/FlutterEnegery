@@ -1,0 +1,26 @@
+$appBreakPoints: (
+  "sm": 575.98px,
+  "md": 767.98px,
+  "lg": 991.98px,
+  "xl": 1199.98px,
+);
+
+@mixin app-bp($br) {
+  @media (min-width: map-get($appBreakPoints, $br)) {
+    @content;
+  }
+}
+@mixin app-pre-bp($br) {
+  @media (max-width: map-get($appBreakPoints, $br)) {
+    @content;
+  }
+}
+
+@mixin app-bp-md($property, $bp-value, $pre-bp-value) {
+  @include app-bp(md) {
+    #{$property}: $bp-value;
+  }
+  @include app-pre-bp(md) {
+    #{$property}: $pre-bp-value;
+  }
+}

@@ -1,0 +1,109 @@
+@import "../references.scss";
+
+$spacingPX: 0px, 4px, 8px, 12px, 16px, 20px, 24px, 28px, 32px, 36px, 40px;
+$spacingREM:
+  0rem, 0.25rem, 0.5rem, 0.75rem, 1rem, 1.25rem, 1.5rem, 1.75rem, 2rem, 2.25rem,
+  2.5rem;
+$spacingDirection: (
+  "": "",
+  "t": "-top",
+  "l": "-left",
+  "r": "-right",
+  "b": "-bottom",
+);
+
+$spacingProperties: (
+  "p": padding,
+  "m": margin,
+);
+
+@for $i from 1 through length($spacingPX) {
+  @each $propertySign, $property in $spacingProperties {
+    .#{$propertySign}v-#{$i - 1} {
+      #{$property}-top: #{nth($spacingPX, $i)};
+      #{$property}-top: #{nth($spacingREM, $i)};
+      #{$property}-bottom: #{nth($spacingPX, $i)};
+      #{$property}-bottom: #{nth($spacingREM, $i)};
+    }
+    .#{$propertySign}h-#{$i - 1} {
+      #{$property}-left: #{nth($spacingPX, $i)};
+      #{$property}-left: #{nth($spacingREM, $i)};
+      #{$property}-right: #{nth($spacingPX, $i)};
+      #{$property}-right: #{nth($spacingREM, $i)};
+    }
+    .#{$propertySign}v-#{$i - 1}-i {
+      #{$property}-top: #{nth($spacingPX, $i)} !important;
+      #{$property}-top: #{nth($spacingREM, $i)} !important;
+      #{$property}-bottom: #{nth($spacingPX, $i)} !important;
+      #{$property}-bottom: #{nth($spacingREM, $i)} !important;
+    }
+    .#{$propertySign}h-#{$i - 1}-i {
+      #{$property}-left: #{nth($spacingPX, $i)} !important;
+      #{$property}-left: #{nth($spacingREM, $i)} !important;
+      #{$property}-right: #{nth($spacingPX, $i)} !important;
+      #{$property}-right: #{nth($spacingREM, $i)} !important;
+    }
+    .#{$propertySign}s-#{$i - 1} {
+      #{$property}-right: #{nth($spacingPX, $i)};
+      #{$property}-right: #{nth($spacingREM, $i)};
+    }
+    .#{$propertySign}e-#{$i - 1} {
+      #{$property}-left: #{nth($spacingPX, $i)};
+      #{$property}-left: #{nth($spacingREM, $i)};
+    }
+    .#{$propertySign}s-#{$i - 1}-i {
+      #{$property}-right: #{nth($spacingPX, $i)} !important;
+      #{$property}-right: #{nth($spacingREM, $i)} !important;
+    }
+    .#{$propertySign}e-#{$i - 1}-i {
+      #{$property}-left: #{nth($spacingPX, $i)} !important;
+      #{$property}-left: #{nth($spacingREM, $i)} !important;
+    }
+    @each $directionSign, $direction in $spacingDirection {
+      .#{$propertySign}#{$directionSign}-#{$i - 1} {
+        #{$property}#{$direction}: #{nth($spacingPX, $i)};
+        #{$property}#{$direction}: #{nth($spacingREM, $i)};
+      }
+      .#{$propertySign}#{$directionSign}-#{$i - 1}-i {
+        #{$property}#{$direction}: #{nth($spacingPX, $i)} !important;
+        #{$property}#{$direction}: #{nth($spacingREM, $i)} !important;
+      }
+    }
+  }
+  .g-#{$i - 1} {
+    display: flex;
+    gap: #{nth($spacingPX, $i)};
+    gap: #{nth($spacingREM, $i)};
+  }
+  .g-#{$i - 1}-i {
+    display: flex;
+    gap: #{nth($spacingPX, $i)} !important;
+    gap: #{nth($spacingREM, $i)} !important;
+  }
+  @each $bp, $width in $appBreakPoints {
+    .g-#{$bp}-#{$i - 1} {
+      @include app-bp($bp) {
+        gap: #{nth($spacingPX, $i)};
+        gap: #{nth($spacingREM, $i)};
+      }
+    }
+    .g-#{$bp}-#{$i - 1}-i {
+      @include app-bp($bp) {
+        gap: #{nth($spacingPX, $i)} !important;
+        gap: #{nth($spacingREM, $i)} !important;
+      }
+    }
+    .g-pre-#{$bp}-#{$i - 1} {
+      @include app-pre-bp($bp) {
+        gap: #{nth($spacingPX, $i)};
+        gap: #{nth($spacingREM, $i)};
+      }
+    }
+    .g-pre-#{$bp}-#{$i - 1}-i {
+      @include app-pre-bp($bp) {
+        gap: #{nth($spacingPX, $i)} !important;
+        gap: #{nth($spacingREM, $i)} !important;
+      }
+    }
+  }
+}

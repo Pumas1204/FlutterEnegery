@@ -1,0 +1,14 @@
+.formItem {
+  margin-bottom: 1.5rem; // Adjust spacing as needed
+
+  :global(.ant-form-item-label) > label {
+    font-weight: 500; // Adjust label font weight
+    color: #555; // Adjust label color
+  }
+}
+
+.input {
+  // Add any specific input styles here if needed
+  // Ant Design's Input component already provides good base styling
+  // Example: border-radius: 4px;
+}

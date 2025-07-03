@@ -1,0 +1,30 @@
+.forgotPassword {
+  text-align: right;
+  margin-bottom: 1.5rem; // Adjust spacing to align with button
+  font-size: 0.875rem; // Adjust font size as needed
+
+  a {
+    color: #28a745; // Use the same green as the button, adjust if needed
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.signUpLink {
+  text-align: center;
+  margin-top: 1.5rem; // Adjust spacing as needed
+  color: #666; // Adjust color as needed
+
+  a {
+    color: #28a745; // Use the same green as the button, adjust if needed
+    font-weight: 500;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
