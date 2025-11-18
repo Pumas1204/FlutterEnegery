@@ -102,8 +102,7 @@ const LoginComp: React.FC = () => {
             fontSize: "12px",
             color: "#666",
           }}
-        >
-        </div>
+        ></div>
 
         {/* use a native form with MUI inputs */}
         <Box

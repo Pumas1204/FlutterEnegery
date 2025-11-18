@@ -45,7 +45,7 @@ const SignupComp: React.FC = () => {
           messageApi.error(
             e.message === "Registration failed"
               ? "Registration failed. Please try again."
-              : "Something went wrong, please try again later."
+              : "Something went wrong, please try again later.",
           );
         })
         .finally(() => resolve(true));
@@ -70,7 +70,7 @@ const SignupComp: React.FC = () => {
       <AuthLayoutComp
         title="Create an account"
         subtitle="Welcome! Please enter your details."
-         imageOnRight={true}
+        imageOnRight={true}
       >
         {contextHolder}
         <Form
