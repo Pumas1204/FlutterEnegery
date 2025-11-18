@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import styles from "./login.module.scss";
 import { AuthLayoutComp } from "components";
 import { useAsyncClick } from "scripts";
 import { PATH } from "data";
@@ -20,6 +19,7 @@ import {
   Divider,
 } from "@mui/material";
 import { Mail, Lock } from "lucide-react";
+import Image from "next/image";
 
 const LoginComp: React.FC = () => {
   const router = useRouter();
@@ -77,7 +77,7 @@ const LoginComp: React.FC = () => {
   return (
     <>
       {/* Top-left logo (fixed so it sits on page top-left) */}
-      <img
+      <Image 
         src="/main-logo.svg"
         alt="Main logo"
         style={{

@@ -15,6 +15,7 @@ import { AuthLayoutComp } from "components";
 import { useAsyncClick } from "scripts";
 import { PATH } from "data";
 import { authApi } from "../api/auth";
+import Image from "next/image";
 
 const SignupComp: React.FC = () => {
   const router = useRouter();
@@ -54,7 +55,7 @@ const SignupComp: React.FC = () => {
 
   return (
     <>
-      <img
+      <Image 
         src="/main-logo.svg"
         alt="Main logo"
         style={{
