@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Button, Form, Input, message as antdMessage } from "antd";
 import {
@@ -15,7 +16,6 @@ import { AuthLayoutComp } from "components";
 import { useAsyncClick } from "scripts";
 import { PATH } from "data";
 import { authApi } from "../api/auth";
-import Image from "next/image";
 
 const SignupComp: React.FC = () => {
   const router = useRouter();
@@ -55,15 +55,15 @@ const SignupComp: React.FC = () => {
 
   return (
     <>
-      <Image 
+      <Image
         src="/main-logo.svg"
         alt="Main logo"
+        width={120}
+        height={40}
         style={{
           position: "fixed",
           top: 16,
           left: 16,
-          width: 120,
-          height: "auto",
           zIndex: 1500,
         }}
       />

@@ -4,9 +4,6 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { AuthLayoutComp } from "components";
-import { useAsyncClick } from "scripts";
-import { PATH } from "data";
-import { authApi } from "../api/auth";
 import {
   Button,
   TextField,
@@ -67,7 +64,6 @@ const LoginComp: React.FC = () => {
       message: "Signed in successfully (dummy). Redirecting...",
       severity: "success",
     });
-    // simulate async work / redirect
     setTimeout(() => {
       setLoading(false);
       router.push("/panel");
@@ -76,8 +72,7 @@ const LoginComp: React.FC = () => {
 
   return (
     <>
-      {/* Top-left logo (fixed so it sits on page top-left) */}
-      <Image 
+      <Image
         src="/main-logo.svg"
         alt="Main logo"
         style={{
@@ -104,7 +99,6 @@ const LoginComp: React.FC = () => {
           }}
         ></div>
 
-        {/* use a native form with MUI inputs */}
         <Box
           component="form"
           onSubmit={onSubmit}
@@ -140,7 +134,6 @@ const LoginComp: React.FC = () => {
             }}
           />
 
-          {/* replaced forgotPassword div with a row: remember checkbox + right-aligned forgot link */}
           <Box
             sx={{
               display: "flex",
@@ -200,8 +193,6 @@ const LoginComp: React.FC = () => {
               Sign up
             </Button>
           </Box>
-
-          {/* divider + social login */}
           <Box
             sx={{ mt: 1, mb: 1, display: "flex", alignItems: "center", gap: 2 }}
           >
