@@ -9,6 +9,7 @@ interface AuthLayoutProps {
   title: string;
   subtitle: string;
   showImage?: boolean; // Add prop to control image visibility
+  imageOnRight?: boolean; // control whether image is on right side
 }
 
 const AuthLayout: React.FC<AuthLayoutProps> = ({
@@ -16,10 +17,14 @@ const AuthLayout: React.FC<AuthLayoutProps> = ({
   title,
   subtitle,
   showImage = true,
+  imageOnRight = false,
 }) => {
   // Default showImage to true
   return (
-    <div dir="ltr" className={styles.authLayout}>
+    <div
+      dir="ltr"
+      className={`${styles.authLayout} ${imageOnRight ? styles.imageRight : ""}`}
+    >
       {showImage && ( // Conditionally render the image section
         <div className={styles.imageSection}>
           {/* Ensure the image path is correct and the image exists in the public folder */}

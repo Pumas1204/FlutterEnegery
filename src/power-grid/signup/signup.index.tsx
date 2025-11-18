@@ -22,7 +22,6 @@ const SignupComp: React.FC = () => {
   const [messageApi, contextHolder] = antdMessage.useMessage();
 
   const onFinish = useAsyncClick((values: any) => {
-    // Split full name into first and last name
     let first_name = "";
     let last_name = "";
     if (values.fullName) {
@@ -46,7 +45,7 @@ const SignupComp: React.FC = () => {
           messageApi.error(
             e.message === "Registration failed"
               ? "Registration failed. Please try again."
-              : "Something went wrong, please try again later.",
+              : "Something went wrong, please try again later."
           );
         })
         .finally(() => resolve(true));
@@ -54,90 +53,108 @@ const SignupComp: React.FC = () => {
   });
 
   return (
-    <AuthLayoutComp
-      title="Create an account"
-      subtitle="Welcome! Please enter your details."
-    >
-      {contextHolder}
-      <Form
-        form={form}
-        name="signup"
-        onFinish={onFinish.onClick}
-        layout="vertical"
-        requiredMark={false}
-        className={styles.signupForm}
+    <>
+      <img
+        src="/main-logo.svg"
+        alt="Main logo"
+        style={{
+          position: "fixed",
+          top: 16,
+          left: 16,
+          width: 120,
+          height: "auto",
+          zIndex: 1500,
+        }}
+      />
+
+      <AuthLayoutComp
+        title="Create an account"
+        subtitle="Welcome! Please enter your details."
+         imageOnRight={true}
       >
-        <Form.Item
-          name="fullName"
-          label="Full name"
-          rules={[{ required: true, message: "Please input your full name!" }]}
+        {contextHolder}
+        <Form
+          form={form}
+          name="signup"
+          onFinish={onFinish.onClick}
+          layout="vertical"
+          requiredMark={false}
+          className={styles.signupForm}
         >
-          <Input
+          <Form.Item
             name="fullName"
-            placeholder="Enter your name"
-            prefix={<UserOutlined className="site-form-item-icon" />}
-          />
-        </Form.Item>
-
-        <Form.Item
-          name="email"
-          label="Email"
-          rules={[
-            { required: true, message: "Please input your Email!" },
-            { type: "email", message: "The input is not valid E-mail!" },
-          ]}
-        >
-          <Input
-            name="email"
-            placeholder="Enter your email"
-            prefix={<MailOutlined className="site-form-item-icon" />}
-          />
-        </Form.Item>
-
-        <Form.Item
-          name="phoneNumber"
-          label="Phone number"
-          rules={[
-            { required: true, message: "Please input your phone number!" },
-          ]}
-        >
-          <Input
-            name="phoneNumber"
-            placeholder="+1"
-            prefix={<PhoneOutlined className="site-form-item-icon" />}
-          />
-        </Form.Item>
-
-        <Form.Item
-          name="password"
-          label="Password"
-          rules={[{ required: true, message: "Please input your Password!" }]}
-        >
-          <Input
-            name="password"
-            placeholder="Enter your password"
-            type="password"
-            prefix={<LockOutlined className="site-form-item-icon" />}
-          />
-        </Form.Item>
-
-        <Form.Item>
-          <Button
-            type="primary"
-            htmlType="submit"
-            className="w-100"
-            disabled={onFinish.loading}
-            loading={onFinish.loading}
+            label="Full name"
+            rules={[
+              { required: true, message: "Please input your full name!" },
+            ]}
           >
-            Create account
-          </Button>
-        </Form.Item>
+            <Input
+              name="fullName"
+              placeholder="Enter your name"
+              prefix={<UserOutlined className="site-form-item-icon" />}
+            />
+          </Form.Item>
 
-        <div className={styles.signInLink}>
-          Already have an account? <Link href="/login">Sign in</Link>
-        </div>
-      </Form>
-    </AuthLayoutComp>
+          <Form.Item
+            name="email"
+            label="Email"
+            rules={[
+              { required: true, message: "Please input your Email!" },
+              { type: "email", message: "The input is not valid E-mail!" },
+            ]}
+          >
+            <Input
+              name="email"
+              placeholder="Enter your email"
+              prefix={<MailOutlined className="site-form-item-icon" />}
+            />
+          </Form.Item>
+
+          <Form.Item
+            name="phoneNumber"
+            label="Phone number"
+            rules={[
+              { required: true, message: "Please input your phone number!" },
+            ]}
+          >
+            <Input
+              name="phoneNumber"
+              placeholder="+1"
+              prefix={<PhoneOutlined className="site-form-item-icon" />}
+            />
+          </Form.Item>
+
+          <Form.Item
+            name="password"
+            label="Password"
+            rules={[{ required: true, message: "Please input your Password!" }]}
+          >
+            <Input
+              name="password"
+              placeholder="Enter your password"
+              type="password"
+              prefix={<LockOutlined className="site-form-item-icon" />}
+            />
+          </Form.Item>
+
+          <Form.Item>
+            <Button
+              type="primary"
+              htmlType="submit"
+              className="w-100"
+              disabled={onFinish.loading}
+              loading={onFinish.loading}
+            >
+              Create account
+            </Button>
+          </Form.Item>
+
+          <div className={styles.signInLink}>
+            Already have an account? <Link href="/login">Sign in</Link>
+          </div>
+        </Form>
+      </AuthLayoutComp>
+    </>
   );
 };
 
